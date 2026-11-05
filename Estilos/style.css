@@ -1,0 +1,367 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Diseño del índice */
+.pagina-inicio {
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 24px;
+    background: url("../img/Fondo.jpeg") center / cover fixed;
+    color: #f0efff;
+    font-family: Arial, sans-serif;
+}
+
+.cabecera-inicio {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 18px 28px;
+    border: 1px solid #a477ff66;
+    border-radius: 16px;
+    background: #111127c9;
+    backdrop-filter: blur(12px);
+}
+
+.titulo-principal {
+    margin: 0;
+    font-size: 24px;
+}
+
+.barra-usuario {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.barra-usuario p {
+    margin: 0;
+    color: #d3d0ef;
+}
+
+.boton-cerrar-sesion {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #7d354f;
+    color: #eeeaff;
+    text-decoration: none;
+}
+
+.boton-cerrar-sesion:hover,
+.boton-eliminar:hover {
+    background: #963e5b;
+}
+
+.contenido-inicio {
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    margin: 24px auto;
+}
+
+.panel {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid #a477ff80;
+    border-radius: 18px;
+    background: #111329df;
+    box-shadow: 0 12px 30px #08081780;
+    backdrop-filter: blur(12px);
+}
+
+.panel-amigos {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.encabezado-panel {
+    margin-bottom: 18px;
+}
+
+.titulo-seccion {
+    margin: 0 0 7px;
+    font-size: 22px;
+}
+
+.encabezado-panel p {
+    margin: 0;
+    color: #c1bbdf;
+}
+
+.formulario-busqueda {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.formulario-busqueda input[type="text"] {
+    min-width: 0;
+    flex: 1;
+    padding: 11px 13px;
+    border: 1px solid #a477ff80;
+    border-radius: 10px;
+    outline: 0;
+    background: #111329;
+    color: #f0efff;
+}
+
+.pagina-inicio input[type="text"]:focus {
+    border-color: #a477ff;
+}
+
+.boton {
+    padding: 10px 15px;
+    border: 1px solid #9870ff;
+    border-radius: 10px;
+    background: #7654e8;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: #8969f4;
+}
+
+.boton:disabled {
+    border-color: #393454;
+    background: #393454;
+    color: #c1bbdf;
+    cursor: default;
+}
+
+.boton-secundario {
+    border-color: #71658f;
+    background: transparent;
+    color: #e0daf5;
+}
+
+/* Distingue visualmente la acción de eliminar amistad. */
+.boton-eliminar {
+    border-color: #a64d6a;
+    background: #7d354f;
+}
+
+.lista-personas,
+.lista-solicitudes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Centra las tarjetas en filas fijas de tres amigos. */
+.lista-amigos {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.tarjeta-persona,
+.tarjeta-solicitud,
+.tarjeta-amigo {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background: #252544e8;
+    color: #f0efff;
+}
+
+.persona-username,
+.solicitud-username,
+.amigo-username {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.formulario-accion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 0;
+}
+
+.boton-estado:disabled {
+    min-width: 150px;
+}
+
+.enlace-chat {
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Ordena cada tarjeta de amigo y ajusta sus botones para tres columnas. */
+.tarjeta-amigo {
+    min-width: 0;
+    gap: 8px;
+    padding: 14px;
+}
+
+.tarjeta-amigo .amigo-username {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.acciones-amigo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarjeta-amigo .boton {
+    min-width: 0;
+    padding: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.pagina-chat {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    margin: 0;
+    background: url("../img/Fondo.jpeg") center / cover fixed;
+    color: #f0efff;
+    font-family: Arial, sans-serif;
+}
+
+/* Recuadro visible con el mensaje temporal de la página de chat. */
+.mensaje-chat {
+    min-width: 340px;
+    padding: 36px 48px;
+    border: 1px solid #a477ff;
+    border-radius: 18px;
+    background: #111329f2;
+    box-shadow: 0 16px 40px #080817b3;
+    text-align: center;
+}
+
+.mensaje-chat h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Estilos compartidos por login y registro */
+.pagina-formulario {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 24px;
+    background: #0e1022;
+    color: #f0efff;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor-formulario {
+    width: 100%;
+    max-width: 440px;
+    padding: 32px;
+    border: 1px solid #292b50;
+    border-radius: 18px;
+    background: #191b37;
+    box-shadow: 0 18px 50px #07081780;
+}
+
+.titulo-formulario {
+    margin-bottom: 24px;
+}
+
+.titulo-formulario h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.titulo-formulario p {
+    margin: 0;
+    color: #aaa8cb;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-formulario label {
+    color: #e9e7ff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo-formulario input[type="text"],
+.campo-formulario input[type="email"],
+.campo-formulario input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #34365e;
+    border-radius: 10px;
+    outline: none;
+    background: #12142b;
+    color: #f0efff;
+}
+
+.campo-formulario input:focus {
+    border-color: #7864ff;
+}
+
+.boton-formulario {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #7662f5;
+    border-radius: 10px;
+    background: #6954ed;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-formulario:hover {
+    background: #7a68ff;
+}
+
+.enlace-formulario {
+    margin: 22px 0 0;
+    color: #aaa8cb;
+    text-align: center;
+}
+
+.enlace-formulario a {
+    color: #a99cff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.enlace-formulario a:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de validación en los formularios */
+.mensaje-validacion {
+    display: block;
+    margin-top: 6px;
+    color: #e6342b;
+    font-size: 13px;
+}
+
+.mensaje-validacion:empty {
+    display: none;
+}
